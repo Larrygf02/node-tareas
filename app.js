@@ -3,9 +3,12 @@ const { argv } = require('./config/yargs');
 
 let comando = argv._[0];
 
+const crearTarea = require('./views/tareas')
+
 switch(comando) {
     case 'crear':
-        console.log('Crear por hacer');
+        let tarea = crearTarea.crear(argv.description);
+        console.log(tarea);
         break;
     case 'listar':
         console.log('Mostrar todas las tareas');
