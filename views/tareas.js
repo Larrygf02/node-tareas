@@ -15,6 +15,7 @@ const cargarDB = () => {
     } catch (error) {
         listadoTareas = [];
     }
+    return listadoTareas;
 }
  
 const crear = (description) => {
@@ -30,6 +31,12 @@ const crear = (description) => {
     return tarea;
 }
 
+const listar = () => {
+    cargarDB();
+    return listadoTareas;
+}
+
 module.exports = {
-    crear
+    crear,
+    listar
 }
