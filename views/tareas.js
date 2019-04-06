@@ -8,15 +8,25 @@ const guardarDB = () => {
         if(err) throw new Error('No se pudo agregar el archivo', err);
     })
 }
+
+const cargarDB = () => {
+    try {
+        listadoTareas = require('../db/data.json');
+    } catch (error) {
+        listadoTareas = [];
+    }
+}
  
 const crear = (description) => {
+
+    cargarDB();
+
     let tarea = {
         description,
         completado: false
     };
     listadoTareas.push(tarea);
     guardarDB();
-
     return tarea;
 }
 
