@@ -31,9 +31,14 @@ const crear = (description) => {
     return tarea;
 }
 
-const listar = () => {
+const listar = (completado) => {
     cargarDB();
-    return listadoTareas;
+    if (completado === undefined){
+        return listadoTareas
+    }
+    return listadoTareas.filter(tarea => {
+        return tarea.completado === JSON.parse(completado)
+    });
 }
 
 const actualizar = (description, completado=true) => {
@@ -42,7 +47,7 @@ const actualizar = (description, completado=true) => {
         return tarea.description == description
     })
     if (index >= 0){
-        listadoTareas[index].completado = completado;
+        listadoTareas[index].completado = JSON.parse(completado);
         guardarDB();
         return true;
     }else{

@@ -12,7 +12,8 @@ switch(comando) {
         console.log(tarea);
         break;
     case 'listar':
-        let tareas = tareasView.listar();
+        console.log(argv.completado);
+        let tareas = tareasView.listar(argv.completado);
         console.log("=====Tareas======".green);
         for (let tarea of tareas) {
             console.log(tarea.description);
@@ -22,7 +23,7 @@ switch(comando) {
         console.log("==============".green);
         break;
     case 'actualizar':
-        let actualizado = tareasView.actualizar(argv.description, argv.completado)
+        let actualizado = tareasView.actualizar(argv.description,argv.completado)
         console.log(actualizado);
         break;
     case 'borrar':
