@@ -12,7 +12,6 @@ switch(comando) {
         console.log(tarea);
         break;
     case 'listar':
-        console.log(argv.completado);
         let tareas = tareasView.listar(argv.completado);
         console.log("=====Tareas======".green);
         for (let tarea of tareas) {
