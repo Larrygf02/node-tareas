@@ -22,7 +22,8 @@ switch(comando) {
         console.log("==============".green);
         break;
     case 'actualizar':
-        console.log('Actualiza una tarea por hacer');
+        let actualizado = tareasView.actualizar(argv.description, argv.completado)
+        console.log(actualizado);
         break;
     default:
         console.log('Comando no es reconocido');
