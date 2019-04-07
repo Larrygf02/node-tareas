@@ -13,6 +13,7 @@ const argv = require('yargs')
                             default: true
                         }
                     })
+                    .command('borrar', 'Borra un elemento pasandole la description', description)
                     .help()
                     .argv;
 

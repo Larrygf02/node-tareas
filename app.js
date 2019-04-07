@@ -25,6 +25,10 @@ switch(comando) {
         let actualizado = tareasView.actualizar(argv.description, argv.completado)
         console.log(actualizado);
         break;
+    case 'borrar':
+        let borrar = tareasView.borrar(argv.description)
+        console.log(borrar.verbose);
+        break;
     default:
         console.log('Comando no es reconocido');
 
